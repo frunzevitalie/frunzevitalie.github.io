@@ -214,6 +214,18 @@
     .skill-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
     .tag { font-family: var(--mono); font-size: 11px; color: var(--tag-text); background: var(--tag-bg); border: 1px solid rgba(79,156,249,0.15); padding: 0.15rem 0.55rem; border-radius: 3px; }
 
+    .back-to-top {
+      position: fixed; bottom: 1.75rem; right: 1.75rem; z-index: 200;
+      background: var(--surface); border: 1px solid var(--border);
+      color: var(--subtle); width: 38px; height: 38px; border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; opacity: 0; pointer-events: none;
+      transition: opacity 0.2s, color 0.15s, border-color 0.15s;
+    }
+    .back-to-top.visible { opacity: 1; pointer-events: auto; }
+    .back-to-top:hover { color: var(--heading); border-color: var(--subtle); }
+    .back-to-top svg { width: 14px; height: 14px; }
+
     :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { transition: none !important; }
@@ -509,6 +521,12 @@
   </div>
 </footer>
 
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+    <path d="M8 12V4M4 7l4-4 4 4"/>
+  </svg>
+</button>
+
 <script>
   const toggle = document.getElementById('themeToggle');
   const label  = document.getElementById('themeLabel');
@@ -516,6 +534,12 @@
 
   const sunPath  = '<circle cx="8" cy="8" r="3.5"/><path d="M8 1v1.5M8 13.5V15M1 8h1.5M13.5 8H15M3.05 3.05l1.06 1.06M11.89 11.89l1.06 1.06M3.05 12.95l1.06-1.06M11.89 4.11l1.06-1.06"/>';
   const moonPath = '<path d="M13.5 9.5A5.5 5.5 0 0 1 6.5 2.5a5.5 5.5 0 1 0 7 7z"/>';
+
+  const backToTop = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    backToTop.classList.toggle('visible', window.scrollY > 400);
+  });
+  backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
   const saved = localStorage.getItem('theme') || 'dark';
   applyTheme(saved);
