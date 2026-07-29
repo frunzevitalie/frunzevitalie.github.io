@@ -487,7 +487,10 @@
   <p class="contact-intro">
     Interested in working together, or just want to connect? Drop me a message and I'll get back to you within a day or two.
   </p>
-  <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+  <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="2f252ff5-9970-4bde-bd38-6f29cef1124d">
+    <input type="hidden" name="subject" value="New contact from vf-website">
+    <input type="checkbox" name="botcheck" style="display:none">
     <div class="form-row">
       <label>
         Name
