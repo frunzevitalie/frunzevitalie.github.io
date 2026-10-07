@@ -181,6 +181,10 @@
     .edu-school { font-family: var(--mono); font-size: 12px; color: var(--accent2); margin-bottom: 0.25rem; }
     .edu-period { font-family: var(--mono); font-size: 11px; color: var(--muted); }
 
+    /* PROJECTS */
+    .project-link { color: var(--accent2); text-decoration: none; transition: color 0.15s; }
+    .project-link:hover { color: var(--heading); }
+
     /* CONTACT */
     .contact-intro { font-size: 16px; color: var(--body); max-width: 500px; margin-bottom: 2.5rem; line-height: 1.75; }
     .contact-form { display: flex; flex-direction: column; gap: 1rem; max-width: 520px; }
@@ -241,6 +245,7 @@
     <ul class="nav-links">
       <li><a href="#about">about</a></li>
       <li><a href="#experience">experience</a></li>
+      <li><a href="#projects">projects</a></li>
       <li><a href="#contact">contact</a></li>
     </ul>
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle colour theme">
@@ -326,7 +331,7 @@
       <p class="skill-group-title">Cloud &amp; infra</p>
       <div class="skill-tags">
         <span class="tag">AWS</span><span class="tag">StackIT</span><span class="tag">Kubernetes</span><span class="tag">Docker</span>
-        <span class="tag">Terraform</span><span class="tag">GitLab CI</span><span class="tag">CI/CD</span>
+        <span class="tag">Terraform</span><span class="tag">Cloudflare</span><span class="tag">GitLab CI</span><span class="tag">CI/CD</span>
       </div>
     </div>
     <div class="skill-group">
@@ -459,6 +464,23 @@
       </div>
     </div>
 
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <p class="section-label">Projects</p>
+  <h2>Side work</h2>
+  <div class="edu-card">
+    <p class="resume-role">Chania Hatha Yoga Center</p>
+    <p class="resume-company"><a class="project-link" href="https://chaniahathayogacenter.com" target="_blank" rel="noopener">chaniahathayogacenter.com</a> · 2026</p>
+    <p class="resume-notes">Bilingual (EN/GR) website for a yoga studio in Crete, built end-to-end with no framework or build step. Class and schedule data live in JSON and are rendered client-side; the contact form runs serverless via Web3Forms. Light/dark theming, responsive hero images, and Schema.org structured data for local search.</p>
+    <p class="resume-notes">Hosted on Cloudflare Pages with a custom domain on Cloudflare DNS, edge caching, automatic TLS, and HTTPS redirects.</p>
+    <div class="skill-tags" style="margin-top:0.75rem;">
+      <span class="tag">Cloudflare Pages</span><span class="tag">Cloudflare DNS</span><span class="tag">JavaScript</span>
+      <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JSON</span>
+      <span class="tag">Schema.org</span><span class="tag">i18n</span><span class="tag">Web3Forms</span>
+    </div>
   </div>
 </section>
 
